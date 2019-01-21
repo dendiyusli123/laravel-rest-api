@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Produk\ProdukKoleksi;
 use App\Http\Resources\Produk\ProdukResource;
 use App\Model\Produk;
 use Illuminate\Http\Request;
@@ -15,7 +16,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return Produk::all();
+        return ProdukKoleksi::collection(Produk::all());
+        // return new ProdukKoleksi(Produk::all());
     }
 
     /**
