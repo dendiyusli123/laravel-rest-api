@@ -16,7 +16,7 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        return ProdukKoleksi::collection(Produk::all());
+        return ProdukKoleksi::collection(Produk::paginate(10));
         // return new ProdukKoleksi(Produk::all());
     }
 
